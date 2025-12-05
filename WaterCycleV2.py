@@ -1,3 +1,36 @@
+"""
+## Acknowledgments & Inspirations
+
+This WaterCycle game was inspired by patterns and techniques from several 
+open-source Python/Tkinter projects:
+
+### Game State Management
+- **xyzen/xyGames** - Adapted the Game class state management pattern (NEW_GAME, 
+  ACTIVE, PAUSED, GAME_OVER, GAME_WON) and score tracking system. Extended with 
+  resource-specific state (water levels, event timers, win conditions).
+  
+- **akmalmzamri/python-knife-hit** - Studied the GameManager class architecture 
+  with threading for delayed game triggers.
+
+### UI & Visual Elements
+- **tisnik/presentations** (Python_GUI/Tkinter/53_menu_images.py) - Referenced 
+  PhotoImage loading patterns for icons in menus. Applied similar concepts using 
+  emoji/unicode symbols throughout the interface.
+  
+- **pythonprogramming.altervista.org** - Studied toolbar button creation with 
+  icons and compound layouts. Adapted for sector allocation buttons.
+
+### Game Loop Architecture
+- **Kent D. Lee's Game Development Tutorial** - Adapted the `root.after()` 
+  recursive timer pattern and datetime-based elapsed time tracking for the 
+  5-minute win condition.
+  
+- **Deformater/tkinter_doom** - Referenced dependency injection pattern (passing 
+  UI components to game logic classes) and event binding structure.
+
+All code was written from scratch implementing unique water resource management 
+mechanics, multi-sector consumption systems, and urgent event-driven gameplay.
+"""
 import tkinter as tk
 from tkinter import ttk
 import random
@@ -77,7 +110,7 @@ class City:
     def __init__(self):
         self.tower_level = 1000
         self.max_tower = 1000
-        self.refill_rate = 100
+        self.refill_rate = 10
         
         # Create sectors
         self.sectors = {
