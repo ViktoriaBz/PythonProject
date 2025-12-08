@@ -110,13 +110,13 @@ class City:
     def __init__(self):
         self.tower_level = 1000
         self.max_tower = 1000
-        self.refill_rate = 10
+        self.refill_rate = 16
         
         # Create sectors
         self.sectors = {
             'Households': Sector('Households', (1, 7)),
-            'Businesses': Sector('Businesses', (1, 5)),
-            'Data Centers': Sector('Data Centers', (1, 10))
+            'Businesses': Sector('Businesses', (2, 8)),
+            'Data Centers': Sector('Data Centers', (3, 10))
         }
     
     def refill_tower(self):
